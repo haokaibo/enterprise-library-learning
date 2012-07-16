@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://office.microsoft.com/Research/Providers/MoneyCentral.asmx?wsdl" docRef="http://office.microsoft.com/Research/Providers/MoneyCentral.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://office.microsoft.com/Research/Providers/MoneyCentral.asmx" xmlns:q1="http://Office.Microsoft.Com/Research" binding="q1:MoneyCentralRemoteSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://office.microsoft.com/Research/Providers/MoneyCentral.asmx" xmlns:q2="http://Office.Microsoft.Com/Research" binding="q2:MoneyCentralRemoteSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>
