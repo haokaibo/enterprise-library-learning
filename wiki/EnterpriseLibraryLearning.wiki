@@ -7,6 +7,4 @@ This project is for the learning of Enterprise library.
 = Details =
 
 Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * The first part is all about the core of the EL - Unity injection and interception.
