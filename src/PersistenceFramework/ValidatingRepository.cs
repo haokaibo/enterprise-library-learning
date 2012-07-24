@@ -23,7 +23,7 @@ namespace PersistenceFramework
             }
             else
             {
-                throw new RepositoryException("Invalid instance to save");
+                throw new RepositoryException("ValidatingRepository: Invalid instance to save");
             }
         }
     }
