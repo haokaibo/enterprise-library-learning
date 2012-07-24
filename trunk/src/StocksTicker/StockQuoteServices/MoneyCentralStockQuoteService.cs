@@ -40,7 +40,7 @@ namespace StocksTicker.StockQuoteServices
             }
 
             // Log logic
-            logger.Log("Retrieving quotes for " + flattenedSymbols, TraceEventType.Information);
+            logger.Log(this.GetType().ToString() + ": Retrieving quotes for " + flattenedSymbols, TraceEventType.Information);
 
             string payload = null;
 
@@ -51,12 +51,12 @@ namespace StocksTicker.StockQuoteServices
             catch (Exception e)
             {
                 string message = "Error invoking service: " + e.Message;
-                logger.Log(message, TraceEventType.Error);
+                logger.Log(this.GetType() + ": " + message, TraceEventType.Error);
                 throw new StockQuoteServiceException(message, e);
             }
 
             // Log logic
-            logger.Log("Received result for " + flattenedSymbols, TraceEventType.Information);
+            logger.Log(this.GetType() + ":" + "Received result for " + flattenedSymbols, TraceEventType.Information);
 
             using (TextReader payloadReader = new StringReader(payload))
             {
@@ -68,10 +68,10 @@ namespace StocksTicker.StockQuoteServices
                 catch (Exception e)
                 {
                     string message = "Error parsing XML payload: " + e.Message;
-                    logger.Log(message, TraceEventType.Error);
+                    logger.Log(this.GetType() + ":" + message, TraceEventType.Error);
                     throw new StockQuoteServiceException(message, e);
                 }
-                logger.Log("Parsed result for " + flattenedSymbols, TraceEventType.Information);
+                logger.Log(this.GetType().ToString() + ": Parsed result for " + flattenedSymbols, TraceEventType.Information);
 
                 XPathNavigator navigator = document.CreateNavigator();
 
@@ -85,7 +85,7 @@ namespace StocksTicker.StockQuoteServices
                     }
                     else
                     {
-                        logger.Log("Unexpected symbol '" + quote.Symbol + "'", TraceEventType.Warning);
+                        logger.Log(this.GetType().ToString() + ": Unexpected symbol '" + quote.Symbol + "'", TraceEventType.Warning);
                     }
                 }
             }

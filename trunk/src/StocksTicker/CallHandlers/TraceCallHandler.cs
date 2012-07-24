@@ -21,12 +21,10 @@ namespace StocksTicker.CallHandlers
             #region Instrumentation: Timing
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            DateTime beginTime = DateTime.Now;
-            // logging
             this.source.TraceInformation(
                 "Invoking {0}",
                 input.MethodBase.ToString());
-
+            Console.WriteLine(getNext().Method.ToString());
             IMethodReturn methodReturn = getNext().Invoke(input, getNext);
             watch.Stop();
 

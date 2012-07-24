@@ -72,11 +72,14 @@ namespace StocksTicker
         {
             RandomStockQuoteService stockQuoteService = new RandomStockQuoteService();
             stockQuoteService.Logger = new ConsoleLogger();
+
             presenter = new StocksTickerPresenter(
             new StocksTickerForm(),
             stockQuoteService,
             new DebugRepository<StockQuote>());
+
             presenter.Logger = new TraceSourceLogger("UI");
+
             Application.Run((Form)presenter.View);
             return presenter;
         }
@@ -93,7 +96,7 @@ namespace StocksTicker
             return presenter;
         }
 
-       
+
 
         static void Application_ThreadExit(object sender, EventArgs e)
         {

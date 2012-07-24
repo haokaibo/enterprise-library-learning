@@ -92,7 +92,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAIAAAACAAKAAAAAAAAAAAAAAAQQAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAIAAAACAAKAAAAAAAAAAAAAAAQQAAAAAAA=</HashCode>
       <FileName>StockQuoteServices\RandomStockQuoteService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -247,7 +247,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="PersistenceFramework.IRepository&lt;T&gt;" Collapsed="true">
-    <Position X="0.5" Y="7.5" Width="1.5" />
+    <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="PersistenceFramework.IValidator&lt;T&gt;" Collapsed="true">

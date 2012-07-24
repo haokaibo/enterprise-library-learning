@@ -25,7 +25,7 @@ namespace StocksTicker.StockQuoteServices
 
         public IDictionary<string, StockQuote> GetQuotes(IEnumerable<string> symbols)
         {
-            this.logger.Log("Generating random quotes", TraceEventType.Information);
+            this.logger.Log(this.GetType() + ": Generating random quotes", TraceEventType.Information);
 
             foreach (string symbol in symbols)
             {

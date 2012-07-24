@@ -100,7 +100,7 @@ namespace StocksTicker.UI
 
         private void OnRefreshTimerElapsed(object source, ElapsedEventArgs args)
         {
-            logger.Log("Refresh timer elapsed", TraceEventType.Information);
+            logger.Log(this.GetType() + ": Refresh timer elapsed", TraceEventType.Information);
 
             if (this.quotes.Count > 0)
             {
@@ -121,13 +121,13 @@ namespace StocksTicker.UI
             }
             catch (StockQuoteServiceException)
             {
-                logger.Log("Error invoking service", TraceEventType.Error);
+                logger.Log(this.GetType().ToString() + ": Error invoking service", TraceEventType.Error);
                 this.view.NotifyServiceStatus("Error invoking service");
                 return;
             }
             catch (Exception)
             {
-                logger.Log("Unknown error invoking service", TraceEventType.Error);
+                logger.Log(this.GetType() + "Unknown error invoking service", TraceEventType.Error);
                 this.view.NotifyServiceStatus("Unknown error invoking service");
                 return;
             }
@@ -152,7 +152,7 @@ namespace StocksTicker.UI
                             updatedQuotes.Add(updatedQuote);
 
                             // Log logic
-                            logger.Log("StockQuote for " + kvp.Key + " was updated", TraceEventType.Information);
+                            logger.Log(this.GetType().ToString() + ": StockQuote for " + kvp.Key + " was updated", TraceEventType.Information);
 
                             // Repository logic
                             SaveQuote(updatedQuote);
@@ -160,13 +160,13 @@ namespace StocksTicker.UI
                         else
                         {
                             // Log logic
-                            logger.Log("StockQuote for " + kvp.Key + " was not updated", TraceEventType.Information);
+                            logger.Log(this.GetType().ToString() + ": StockQuote for " + kvp.Key + " was not updated", TraceEventType.Information);
                         }
                     }
                     else
                     {
                         // Log logic
-                        logger.Log("Received quote for unknown symbol " + kvp.Key, TraceEventType.Warning);
+                        logger.Log(this.GetType() + ": Received quote for unknown symbol " + kvp.Key, TraceEventType.Warning);
                     }
                 }
             }
@@ -190,7 +190,7 @@ namespace StocksTicker.UI
                 // Log logic
                 this.logger.Log(
                     string.Format(
-                        "Error saving the updated quote for '{0}': {1}",
+                        this.GetType().ToString() + ": Error saving the updated quote for '{0}': {1}",
                         updatedQuote.Symbol,
                         e.Message),
                     TraceEventType.Warning);
