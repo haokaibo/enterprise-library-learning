@@ -1,0 +1,1 @@
+There are practices and related docs for the learning of Enterprise library base on the version 5.0. This project is writen
